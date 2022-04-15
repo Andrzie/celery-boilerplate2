@@ -126,6 +126,15 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.fastmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'Andrzie@fastmail.com'
+EMAIL_HOST_PASSWORD = 'wtw5kbmqhwku5d2k'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
+
 
 #redis
 
