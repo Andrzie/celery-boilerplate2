@@ -1,10 +1,6 @@
 version: '3.9'
 
 services:
-  db:
-    image: postgres:10-alpine
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
   redis:
     image: redis
     restart: always
@@ -23,7 +19,7 @@ services:
       - '8000:8000'
   celery:
     build: .
-    command: celery -A core worker -B
+    command: celery -A core worker -l info -B
     container_name: 'my_demo_app_celery'
     volumes:
       - .:/code
@@ -32,5 +28,3 @@ services:
     depends_on:
       - web
       - redis
-volumes:
-  postgres_data:
